@@ -44,8 +44,8 @@ void loop()
   uint32_t numberOfTries = 100;
   uint32_t timeNeeded;
 
-  Serial.println("4th order float IIR speed benchmark");
-  Serial.println("===================================");
+  Serial.println(F("4th order float IIR speed benchmark"));
+  Serial.println(F("==================================="));
 
   startTime = millis();
   for (n = 0; n < numberOfTries; n++)
@@ -56,10 +56,10 @@ void loop()
   stopTime = millis();
   timeNeeded = stopTime - startTime;
 
-  Serial.print("total number of samples: "); Serial.print(numberOfTries*bufferSize); Serial.print("  ");
-  Serial.print("duration [us]: "); Serial.print(timeNeeded); Serial.print("  ==> ");
-  Serial.print("speed [kiloSamples/second] : "); Serial.println((float)numberOfTries * bufferSize / timeNeeded); Serial.print("  ");
-  Serial.println("");
+  Serial.print(F("total number of samples: ")); Serial.print(numberOfTries*bufferSize); Serial.print(F("  "));
+  Serial.print(F("duration [us]: ")); Serial.print(timeNeeded); Serial.print(F("  ==> "));
+  Serial.print(F("speed [kiloSamples/second] : ")); Serial.println((float)numberOfTries * bufferSize / timeNeeded); Serial.print(F("  "));
+  Serial.println(F(""));
 
 
 }

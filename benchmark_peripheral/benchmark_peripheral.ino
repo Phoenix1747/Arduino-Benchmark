@@ -7,10 +7,10 @@ void setup()
 
   delay(3000);
 
-  Serial.println("***************************************************");
-  Serial.println("*              Arduino Benchmark                  *");
-  Serial.println("***************************************************");
-  Serial.println("");
+  Serial.println(F("***************************************************"));
+  Serial.println(F("*              Arduino Benchmark                  *"));
+  Serial.println(F("***************************************************"));
+  Serial.println(F(""));
 }
 
 void benchmark_digitalWrite(uint32_t count)
@@ -49,34 +49,34 @@ void loop()
   uint32_t numberOfTries=100000;
   uint32_t timeNeeded;
   
-  Serial.println("digitalWrite speed benchmark");
-  Serial.println("=============================");
+  Serial.println(F("digitalWrite speed benchmark"));
+  Serial.println(F("============================="));
     
   startTime=micros();
   benchmark_digitalWrite(numberOfTries);
   stopTime=micros();
   timeNeeded = stopTime-startTime;
   
-  Serial.print("number of tries: ");Serial.print(numberOfTries);Serial.print("  ");
-  Serial.print("duration [us]: "); Serial.print(timeNeeded);Serial.print("  ==> ");
-  Serial.print("speed [megaSamples/second] : "); Serial.println((float)numberOfTries / timeNeeded); Serial.print("  "); 
-  Serial.println("");   
+  Serial.print(F("number of tries: "));Serial.print(numberOfTries);Serial.print(F("  "));
+  Serial.print(F("duration [us]: ")); Serial.print(timeNeeded);Serial.print(F("  ==> "));
+  Serial.print(F("speed [megaSamples/second] : ")); Serial.println((float)numberOfTries / timeNeeded); Serial.print(F("  ")); 
+  Serial.println(F(""));   
   
-  Serial.println("analogRead speed benchmark");
-  Serial.println("=============================");
+  Serial.println(F("analogRead speed benchmark"));
+  Serial.println(F("============================="));
     
   startTime=micros();
   benchmark_analogRead(numberOfTries);
   stopTime=micros();
   timeNeeded = stopTime-startTime;
   
-  Serial.print("number of tries: ");Serial.print(numberOfTries);Serial.print("  ");
-  Serial.print("duration [us]: "); Serial.print(timeNeeded);Serial.print("  ==> ");
-  Serial.print("speed [kiloSamples/second] : "); Serial.println((float)numberOfTries / timeNeeded * 1000); Serial.print("  ");
-  Serial.println("");
+  Serial.print(F("number of tries: "));Serial.print(numberOfTries);Serial.print(F("  "));
+  Serial.print(F("duration [us]: ")); Serial.print(timeNeeded);Serial.print(F("  ==> "));
+  Serial.print(F("speed [kiloSamples/second] : ")); Serial.println((float)numberOfTries / timeNeeded * 1000); Serial.print(F("  "));
+  Serial.println(F(""));
   
   delay(5000);
-  Serial.println("");
-  Serial.println("");
-  Serial.println("");
+  Serial.println(F(""));
+  Serial.println(F(""));
+  Serial.println(F(""));
 }

@@ -55,7 +55,7 @@ void setup() {
     Serial.print(".");
     delay(1000);
   }
-  Serial.println("Whetstone Benchmark, Version 1.2 (Language: C)");
+  Serial.println(F("Whetstone Benchmark, Version 1.2 (Language: C)"));
 }
 
 
@@ -418,25 +418,25 @@ C--------------------------------------------------------------------
         return(1);
     }
 
-    Serial.print("Loops: ");
+    Serial.print(F("Loops: "));
     Serial.print(LOOP);
-    Serial.print(", Iterations: ");
+    Serial.print(F(", Iterations: "));
     Serial.print(II);
-    Serial.print(", Duration: ");
+    Serial.print(F(", Duration: "));
     Serial.print(finisec-startsec);
-    Serial.println(" ms.");//Arduino measures time in milliseconds
+    Serial.println(F(" ms."));//Arduino measures time in milliseconds
 
 //    KIPS = (100.0*LOOP*II)/(float)(finisec-startsec);
       KIPS = (100.0*LOOP*II)/(float)(finisec-startsec)*1000;//convert to seconds from milliseconds
     if (KIPS >= 1000.0){
-        Serial.print("C Converted Single Precision Whetstones: ");
+        Serial.print(F("C Converted Single Precision Whetstones: "));
         Serial.print(KIPS/1000.0);
-        Serial.println(" MIPS");
+        Serial.println(F(" MIPS"));
     }
     else{
-        Serial.print("C Converted Single Precision Whetstones: ");
+        Serial.print(F("C Converted Single Precision Whetstones: "));
         Serial.print(KIPS);
-        Serial.println(" KIPS");
+        Serial.println(F(" KIPS"));
     }
 
     if (continuous)
